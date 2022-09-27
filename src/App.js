@@ -11,21 +11,22 @@ function App() {
   const handleClickCheckbox = (event) => setDisabled(event.target.checked);
   return (
     <div>
-      <button 
-        style={{ backgroundColor: buttonColor }}
+      <button
+        style={{ backgroundColor: disabled ? 'gray' : buttonColor }}
         onClick={handleClickButton}
         disabled={disabled}
       >
         Change to {newButtonColor}
       </button>
       <br />
-      <input 
+      <input
         type='checkbox'
-        id='enable-button-checkbox'
+        id='disable-button-checkbox'
         defaultChecked={disabled}
         aria-checked={disabled}
-        onChange={handleClickCheckbox} 
+        onChange={handleClickCheckbox}
       />
+      <label htmlFor='disable-button-checkbox'>Disable button</label>
     </div>
   );
 }
